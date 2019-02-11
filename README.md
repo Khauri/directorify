@@ -1,6 +1,7 @@
 # Directorify
-**This package is still under heavy development**
-Create virtual or actualized directories with ease. Works in browser.
+***This package is still under heavy development***
+
+Create virtual or actualized directories with ease. Originally creeated to pretty print directory structures but now can do so much more.
 
 ## Installation
 
@@ -29,7 +30,6 @@ root.file('path/to/directory/', true)
 // Throws TypeError if any part of path is not a directory
 let fileNode = root.file('/path/to/file.js')
 
-// console.log(fileNode.fullPath) // root/path/to/file.js
 // Change directory
 root.cd('path/to')
 
@@ -37,7 +37,7 @@ root.cd('path/to')
 root.cd('./directory')
 
 // Get cwd
-console.log(root.cwd) // path/to/directory/
+console.log(root.cwd) // logs: path/to/directory/
 
 // Add a file using relative syntax
 fileNode = root.file('./file2.js', true)
@@ -45,17 +45,16 @@ fileNode = root.file('./file2.js', true)
 // To use an absolute path, start the path with a /
 fileNode = root.file('/file3.js', true)
 
-// Change directory with relative path
-// log the full Tree
-console.log(root.toString() /* or just root */) // See example string
+// Get string representation of tree
+root.toString()
 
 // Get the tree as JSON
 const asJSON = root.toJSON()
-console.log( JSON.stringify(asJSON, null, 2)) // See example json
 ```
 
 Example String Output:
-<pre>
+
+```
 root/
 ├─ path/
 │  └─ to/
@@ -63,9 +62,13 @@ root/
 │     └─ directory/
 │        └─ file2.js
 └─ file3.js
-</pre>
+```
 
-Example JSON Output:
+
+<details>
+<summary>Example JSON Output</summary>
+<p>
+
 ```json
 {
   "fileName": "root/",
@@ -118,6 +121,10 @@ Example JSON Output:
   ]
 }
 ```
+
+</p>
+</details>
+
 ## Mixins
 
 This package includes mixins intended to increase the utility of the core module.
@@ -133,9 +140,11 @@ This simply wraps some common functionality such as creating and removing files 
 const { Directory, mixins } = require('directorify')
 
 Directory.mixin(mixins.fs)
+
 // Static methods
 // Create tree from actual directory
 const root = Directory.fromDir('./')
+
 // Instance methods
 // Create a new directory
 root.mkDir('/path/to/dir')
@@ -144,7 +153,7 @@ root.mkDir('/path/to/dir')
 ## Development
 
 ### Docs
-The docs are a mess, but take a look by using
+The docs are a mess, but take a look by using:
 
 ```bash
 yarn docs

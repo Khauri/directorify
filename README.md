@@ -44,7 +44,7 @@ console.log( JSON.stringify(asJSON, null, 2)) // See example json
 ```
 
 Example String Output:
-```
+
 root/
 ├─ path/
 │  └─ to/
@@ -52,7 +52,7 @@ root/
 │     └─ directory/
 │        └─ file2.js
 └─ file3.js
-```
+
 
 Example JSON Output:
 ```json
@@ -129,3 +129,17 @@ const root = Directory.fromDir('./')
 // Create a new directory
 root.mkDir('/path/to/dir')
 ```
+
+## Development
+
+### Docs
+The docs are a mess, but take a look by using
+
+```bash
+yarn docs
+# or
+npm run docs
+```
+
+### Testing
+No tests yet but they're coming after I get the docs sorted

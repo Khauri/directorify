@@ -1,0 +1,15 @@
+{
+  "name": "directorify",
+  "version": "0.1.0",
+  "description": "Create fake or actualized directories",
+  "main": "index.js",
+  "scripts": {
+    "doc" : "jsdoc index.js src -r",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fbemitter": "^2.1.1"
+  }
+}
